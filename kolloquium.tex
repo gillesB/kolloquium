@@ -27,10 +27,10 @@
 
 \mode<presentation>
 {
-  %\usetheme{CambridgeUS}
+  \usetheme{Rochester}
   % oder ...
   %\usecolortheme{beaver}
-  \useoutertheme[subsection=false]{miniframes}
+  %\useoutertheme[subsection=false]{miniframes}
   
 \setbeamertemplate{footline}
 {%
@@ -61,7 +61,7 @@
 
 \setbeamercolor{section in toc}{fg=black,bg=white}
 \setbeamercolor{alerted text}{fg=cismetgrey!50!black}
-\setbeamercolor*{palette primary}{fg=cismetgrey!60!black,bg=cismetgrey!30!white}
+\setbeamercolor*{palette primary}{fg=nearblack,bg=cismetgrey!30!white}
 \setbeamercolor*{palette secondary}{fg=cismetgrey!70!black,bg=gray!15!white}
 \setbeamercolor*{palette tertiary}{bg=cismetgrey!80!black,fg=gray!10!white}
 \setbeamercolor*{palette quaternary}{fg=cismetgrey,bg=gray!5!white}
@@ -75,7 +75,7 @@
 
 %\setbeamercolor*{titlelike}{parent=palette primary}
 \setbeamercolor{titlelike}{parent=palette primary,fg=nearblack}
-\setbeamercolor{frametitle}{bg=cismetgrey!10!white}
+\setbeamercolor{frametitle}{bg=cismetgrey}
 \setbeamercolor{frametitle right}{bg=cismetgrey!60!white}
 
 \setbeamercolor*{separation line}{}
@@ -87,6 +87,7 @@
 	\setbeamercolor{enumerate item}{fg=cismetorange}
 	
 	\setbeamertemplate{navigation symbols}{}%remove navigation symbols
+	\setbeamertemplate{itemize items}[triangle]
 }
 
 
@@ -103,9 +104,8 @@
 % mit fontenc zu löschen.
 
 
-\title[Kurzversion des Titels] % (optional, nur bei langen Titeln nötig)
-{Implementierung der WuNDa
-Abrechnungsunterstützung}
+\title % (optional, nur bei langen Titeln nötig)
+{Master-Thesis}
 
 \subtitle
 {Kolloquium} % (optional)
@@ -145,12 +145,12 @@ Abrechnungsunterstützung}
 
 % Folgendes sollte gelöscht werden, wenn man nicht am Anfang jedes
 % Unterabschnitts die Gliederung nochmal sehen möchte.
-\AtBeginSection[]
-{
-  \begin{frame}<beamer>{Gliederung}
-    \tableofcontents[currentsection]
-  \end{frame}
-}
+%\AtBeginSection[]
+%{
+  %\begin{frame}<beamer>{Gliederung}
+   % \tableofcontents[currentsection]
+  %\end{frame}
+%}
 
 
 % Falls Aufzählungen immer schrittweise gezeigt werden sollen, kann
@@ -183,91 +183,137 @@ Abrechnungsunterstützung}
 
 \section{Einleitung}
 
-\subsection[Kurzversion des ersten Unterabschnittstitels]
-{Erster Unterabschnittstitel}
-
-\begin{frame}{Überschriften müssen informativ sein.\\
-    Korrekte Groß-/Kleinschreibung beachten.}{Untertitel sind optional.}
+\begin{frame}{Hintergrund der Arbeit}
   % - Eine Überschrift fasst einen Rahmen verständlich zusammen. Man
   %   muss sie verstehen können, selbst wenn man nicht den Rest des
   %   Rahmens versteht.
 
   \begin{itemize}
   \item
-    Viel \texttt{itemize} benutzen.
+    Rationalisierung im R102
+    \pause
   \item
-    Sehr kurze Sätze oder Satzglieder verwenden.
+    Personalabbau
+    \pause
+  \item
+    Gleiches oder besseres Angebot für Kunden
+    %Angebot vertiefen  
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Überschriften müssen informativ sein.}
-
-  Man kann Overlays erzeugen\dots
-  \begin{itemize}
-  \item mit dem \texttt{pause}-Befehl:
-    \begin{itemize}
-    \item
-      Erster Punkt.
-      \pause
-    \item    
-      Zweiter Punkt.
-    \end{itemize}
-  \item
-    mittels Overlay-Spezifikationen:
-    \begin{itemize}
-    \item<3->
-      Erster Punkt.
-    \item<4->
-      Zweiter Punkt.
-    \end{itemize}
-  \item
-    mit dem allgemeinen \texttt{uncover}-Befehl:
-    \begin{itemize}
-      \uncover<5->{\item
-        Erster Punkt.}
-      \uncover<6->{\item
-        Zweiter Punkt.}
-    \end{itemize}
-  \end{itemize}
-\end{frame}
-
-
-\subsection{Zweiter Unterabschnittstitel}
-
-\begin{frame}{Überschriften müssen informativ sein.}
-\end{frame}
-
-\begin{frame}{Überschriften müssen informativ sein.}
-\end{frame}
-
-\section*{Zusammenfassung}
-
-\begin{frame}{Zusammenfassung}
-
-  % Die Zusammenfassung sollte sehr kurz sein.
+\begin{frame}{Aufteilung der Arbeit}
+Implementierung der WuNDa Abrechnungsunterstützung mit anschließender Workflowanalyse von externen Benutzern  \pause
+\bigskip
   \begin{itemize}
   \item
-    Die \alert{erste Hauptbotschaft} des Vortrags in ein bis zwei Zeilen.
-  \item
-    Die \alert{zweite Hauptbotschaft} des Vortrags in ein bis zwei Zeilen.
-  \item
-    Eventuell noch eine \alert{dritte Botschaft}, aber nicht noch mehr.
-  \end{itemize}
-  
-  % Der folgende Ausblick ist optional.
-  \vskip0pt plus.5fill
-  \begin{itemize}
-  \item
-    Ausblick
+    Erster Teil:
     \begin{itemize}
-    \item
-      Etwas, was wir noch nicht lösen konnten.
-    \item
-      Nochwas, das wir noch nicht lösen konnten.
+    \item Implementierung der Abrechnungsunterstützung
     \end{itemize}
+    \pause
+  \item
+    Zweiter Teil:
+    \begin{itemize}
+    \item Workflowanalyse von externen Benutzer
+    \end{itemize}  
   \end{itemize}
 \end{frame}
 
+
+\section{Implementierung der Abrechnungsunterstützung}
+
+
+\begin{frame}{Problemstellung}
+  Selbstbeziehen von Produkten \pause	  
+  \begin{itemize}
+  \item Vorteile externe Benutzer: 
+  \begin{itemize}
+  	\item unabhängig vom R102 \pause
+  	\item Rabatt \pause
+  \end{itemize}
+  \item<4-> Vorteil R102:
+  \begin{itemize}
+  \item keine Bearbeitungszeit
+  \end{itemize}
+  \item<5-> Nachteil R102:
+  \begin{itemize}
+  \item Zeitaufwändiges Erstellen der Abrechnung
+  %Folie mit Erstellen evt einfügen
+  \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Lösungsansatz}
+  \begin{itemize}
+  \item
+    Automatisierung der Abrechnung über WuNDa
+    \pause
+  \item
+    Grundlage besteht bereits \pause
+  \item Protokollierung der bezogenen Produkte  
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Wichtigste Erweiterungen}
+  \begin{itemize}
+  \item
+    Gruppieren von Kunden
+    \pause
+  \item
+    Auflistung von Buchungen \pause
+  \item Suche von Buchungen \pause
+  \item Erstellung der Abrechnung
+  \end{itemize}
+\end{frame}
+
+
+\section{Workflowanalyse von externen Benutzern}
+
+\begin{frame}{Workflowanalyse von externen Benutzern}
+  \begin{itemize}
+  \item
+    Motivation des R102:
+    \begin{itemize}
+    \item Gewinnen von neuen externen Benutzern
+    \item Attraktiveres WuNDa durch neue Funktionalitäten 
+    \end{itemize}
+    \pause
+  \item
+    Beleuchtung der Projektentwickler \pause
+      \item
+    Informationen stammen aus gemeinsamen Treffen
+    \pause
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Projektentwickler}
+  \begin{itemize}
+  \item
+    Organisation vom Bau von Immobilien
+    \pause
+  \item
+    von Suche der Grundstücke \pause
+  \item bis zum Fertigstellen der schlüsselfertigen Immobilie  \pause
+  \item Verteilt Aufgaben an Dienstleister
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Abfragen eines berechtigten Interesses}
+  \begin{itemize}
+  \item
+    Abfrage ehe Einsicht in Baulasten gewährt wird
+    \pause
+  \item
+    Einsicht und Beziehen von Baulasten kommt häufig vor \pause
+  \item Interesse an der Automatisierung \pause
+  \item Mögliche Umsetzung:
+  \begin{itemize}
+  \item Vorgeschalteter Dialog \pause
+  \item stichprobenartige Kontrolle
+  \item Auffinden von Unregelmäßigkeiten mit WuNDa
+  \end{itemize}
+  \end{itemize}
+\end{frame}
 
 \end{document}
 
