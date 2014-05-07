@@ -90,8 +90,16 @@
 	\setbeamertemplate{itemize items}[triangle]
 }
 
+\setbeamertemplate{section page}
+{
+    \begin{centering}
+    \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+    \end{beamercolorbox}
+    \end{centering}
+}
 
-\usepackage[german]{babel}
+\usepackage[ngerman]{babel}
 % oder was auch immer
 
 \usepackage[utf8]{inputenc}
@@ -151,6 +159,7 @@
    % \tableofcontents[currentsection]
   %\end{frame}
 %}
+\AtBeginSection{\frame{\sectionpage}}
 
 
 % Falls Aufzählungen immer schrittweise gezeigt werden sollen, kann
@@ -222,7 +231,6 @@ Implementierung der WuNDa Abrechnungsunterstützung mit anschließender Workflow
 
 \section{Implementierung der Abrechnungsunterstützung}
 
-
 \begin{frame}{Problemstellung}
   Selbstbeziehen von Produkten \pause	  
   \begin{itemize}
@@ -262,8 +270,10 @@ Implementierung der WuNDa Abrechnungsunterstützung mit anschließender Workflow
   \item
     Auflistung von Buchungen \pause
   \item Suche von Buchungen \pause
-  \item Erstellung der Abrechnung
+  \item Erstellung der Abrechnung 
   \end{itemize}
+  \bigskip
+  \uncover<5->{Mehr hierzu in der Vorführung}
 \end{frame}
 
 
@@ -282,7 +292,6 @@ Implementierung der WuNDa Abrechnungsunterstützung mit anschließender Workflow
     Beleuchtung der Projektentwickler \pause
       \item
     Informationen stammen aus gemeinsamen Treffen
-    \pause
   \end{itemize}
 \end{frame}
 
@@ -314,6 +323,8 @@ Implementierung der WuNDa Abrechnungsunterstützung mit anschließender Workflow
   \end{itemize}
   \end{itemize}
 \end{frame}
+
+\section{Vorführung}
 
 \end{document}
 
